@@ -1,4 +1,4 @@
-from flask import Flask, redirect, render_template, request, redirect
+from flask import Flask, redirect, jsonify, render_template, request, redirect, session
 from flask_sqlalchemy import SQLAlchemy
 from datetime import datetime
 
@@ -20,6 +20,19 @@ class Student(db.Model):
         return f"{self.id} - {self.name}"
 
 
+@app.route("/login", methods=["POST"])
+def login():
+    _json = request.json
+    _username = _json["username"]
+    _password = _json["password"]
+    if _username and _password:
+        return jsonify({"message": "Welcome Admin!"})
+    else:
+        resp = jsonify({"message": "Invalid credentials"})
+        resp.status_code = 400
+        return resp
+
+
 @app.route("/", methods=["GET", "POST"])
 def hello_world():
     if request.method == "POST":
@@ -28,7 +41,9 @@ def hello_world():
         dob = request.form["dob"]
         address = request.form["address"]
         mobile = request.form["mobile"]
-        student = Student(name=name, surname=surname, dob=dob, address=address, mobile=mobile)
+        student = Student(
+            name=name, surname=surname, dob=dob, address=address, mobile=mobile
+        )
         db.session.add(student)
         db.session.commit()
 

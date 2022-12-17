@@ -5,41 +5,42 @@
 <div class="container">
   <h2>Add Student Info</h2>
   <table>
-    <th>
-    <td>
-      <div class="mb-3 col-sm-10 ">
-        <label for="name" class="form-label">Name</label>
-        <input type="text" class=" form-control" name="name" id="name">
-      </div>
-    </td>
-    <td>
-      <div class="mb-3 col-sm-10">
-        <label for="surname" class="form-label">Surname</label>
-        <input type="text" class="form-control" name="surname" id="surname">
-      </div>
-    </td>
-    <td>
-      <div class="mb-3 col-sm-10">
-        <label for="dob" class="form-label">DOB</label>
-        <input type="text" class="form-control" name="dob" id="dob">
-      </div>
-    </td>
-    <td>
-      <div class="mb-3 col-sm-10">
-        <label for="address" class="form-label">Address</label>
-        <input type="text" class="form-control" name="address" id="address">
-      </div>
-    </td>
-    <td>
-      <div class="mb-3 col-sm-10">
-        <label for="mobile" class="form-label">Mobile</label>
-        <input type="text" class="form-control" name="mobile" id="mobile">
-      </div>
-    </td>
-    </th>
+    <form action="/" method="POST" ]>
+      <th>
+      <td>
+        <div class="mb-3 col-sm-10 ">
+          <label for="name" class="form-label">Name</label>
+          <input type="text" class=" form-control" name="name" id="name">
+        </div>
+      </td>
+      <td>
+        <div class="mb-3 col-sm-10">
+          <label for="surname" class="form-label">Surname</label>
+          <input type="text" class="form-control" name="surname" id="surname">
+        </div>
+      </td>
+      <td>
+        <div class="mb-3 col-sm-10">
+          <label for="dob" class="form-label">DOB</label>
+          <input type="text" class="form-control" name="dob" id="dob">
+        </div>
+      </td>
+      <td>
+        <div class="mb-3 col-sm-10">
+          <label for="address" class="form-label">Address</label>
+          <input type="text" class="form-control" name="address" id="address">
+        </div>
+      </td>
+      <td>
+        <div class="mb-3 col-sm-10">
+          <label for="mobile" class="form-label">Mobile</label>
+          <input type="text" class="form-control" name="mobile" id="mobile">
+        </div>
+      </td>
+      </th>
   </table>
-  <form action="/" method="POST" ]>
-    <button type="submit" class="btn btn-dark">Submit</button>
+
+  <button type="submit" class="btn btn-dark">Submit</button>
   </form>
 </div>
 
@@ -71,7 +72,6 @@
 
         <tr>
           <th scope="row">{{loop.index}}</th>
-          <td>{{student.id}}</td>
           <td>{{student.name}}</td>
           <td>{{student.surname}}</td>
           <td>{{student.dob}}</td>
